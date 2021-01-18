@@ -7,13 +7,18 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+<<<<<<< HEAD
 
     @session = session
 
+=======
+    @session = session
+>>>>>>> 1b2b19622b6a75714d4c19fc5caf8fbedeee33e9
     erb :index
   end
 
   post '/login' do
+<<<<<<< HEAD
     is_valid_username = false
     User.all.each do |user|
       if user.username == params[:username]
@@ -30,6 +35,16 @@ class ApplicationController < Sinatra::Base
       erb :error
     end
 
+=======
+    user = User.find_by({:username => params[:username]})
+    if(user == nil)
+      erb :error
+    else 
+      session[:user_id] = user.id
+    end
+
+    redirect '/account'
+>>>>>>> 1b2b19622b6a75714d4c19fc5caf8fbedeee33e9
   end
 
   get '/account' do
@@ -38,7 +53,11 @@ class ApplicationController < Sinatra::Base
     if (Helpers.is_logged_in?(session))
       erb :account
     else 
+<<<<<<< HEAD
       erb :error
+=======
+      erb :error 
+>>>>>>> 1b2b19622b6a75714d4c19fc5caf8fbedeee33e9
     end
   end
 

@@ -6,10 +6,17 @@
     <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
   </head>
   <body id="page-top">
+<<<<<<< HEAD
     <h1>Welcome <%= Helpers.current_user(@session).username%></h1>
     <h3>Your Balance: <%= Helpers.current_user(@session).balance%></h3>
     <form action = "/logout" method = "get">
       <input type = "submit" value = "Log Out">
+=======
+    <h2>Hello <%= Helpers.current_user(@session).username%> </h2>
+    <p> Balance:  <%= Helpers.current_user(@session).balance%></p>
+    <form action = "/logout" method = "get">
+      <input type = "submit" value = "logout">
+>>>>>>> 1b2b19622b6a75714d4c19fc5caf8fbedeee33e9
     </form>
     
     
